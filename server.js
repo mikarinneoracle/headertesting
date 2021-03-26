@@ -12,24 +12,24 @@ app.listen(port, function() {
 
 app.get('/1', function(req, res) {
     var response = {};
-    response.size = '1k';
     var header = '';
     for(var i=0; i < 1000; i++)
     {
         header = header + "A";
     }
+    response.size = header.length;
     res.setHeader('test-header', header);
     res.send(JSON.stringify(response));
 });
 
 app.get('/10', function(req, res) {
     var response = {};
-    response.size = '10k';
     var header = '';
     for(var i=0; i < 10000; i++)
     {
         header = header + "B";
     }
+    response.size = header.length;
     res.setHeader('test-header', header);
     res.send(JSON.stringify(response));
 });
