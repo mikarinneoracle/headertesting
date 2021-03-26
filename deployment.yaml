@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: headertest
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: headertest
+  template:
+    metadata:
+      labels:
+        app: headertest
+    spec:
+      containers:
+      - name: headertest
+        image: fra.ocir.io/sefinland/mrinne/headertest:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: default
+      imagePullSecrets:
+      - name:  ocirsecret
+      

@@ -1,0 +1,18 @@
+{
+  "name": "kubesample",
+  "version": "0.0.1",
+  "description": "header testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Mika Rinne, 2020",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {}
+}
