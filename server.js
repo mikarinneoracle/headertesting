@@ -35,10 +35,20 @@ app.get('/10', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    var response = {};
+    //var response = {};
+    var response = [];
+    for (key in req.headers) {
+        res.setHeader(key, req.headers[key]);
+        var el = {};
+        el.header = key;
+        el.size = req.headers[key].length;
+        response.push(el)
+    }
+    /*
     var header = req.headers['test-header'];
     response.size = header.length;
     res.setHeader('test-header', header);
+    */
     res.send(JSON.stringify(response));
 });
 
