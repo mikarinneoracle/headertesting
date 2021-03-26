@@ -34,3 +34,11 @@ app.get('/10', function(req, res) {
     res.send(JSON.stringify(response));
 });
 
+app.get('/', function(req, res) {
+    var response = {};
+    var header = req.headers['test-header'];
+    response.size = header.length;
+    res.setHeader('test-header', header);
+    res.send(JSON.stringify(response));
+});
+
