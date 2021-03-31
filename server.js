@@ -5,6 +5,11 @@ var port = 3000;
 var app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+app.use(express.static(__dirname + '/html'));
 
 app.listen(port, function() {
     console.log('server listening on port ' + port);
@@ -67,6 +72,15 @@ app.get('/set-cookies', function(req, res) {
     response.size = header.length;
     res.setHeader('test-header', header);
     */
+    res.send(JSON.stringify(response));
+});
+
+app.post('/', function(req, res) {
+    var data = req.body.data;
+    res.cookie("data", data);
+    var response = {};
+    response.data = data;
+    response.size = data.length;
     res.send(JSON.stringify(response));
 });
 
