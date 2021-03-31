@@ -52,3 +52,21 @@ app.get('/', function(req, res) {
     res.send(JSON.stringify(response));
 });
 
+app.get('/set-cookies', function(req, res) {
+    //var response = {};
+    var response = [];
+    for (key in req.headers) {
+        res.cookie(key, req.headers[key]);
+        var el = {};
+        el.header = key;
+        el.size = req.headers[key].length;
+        response.push(el)
+    }
+    /*
+    var header = req.headers['test-header'];
+    response.size = header.length;
+    res.setHeader('test-header', header);
+    */
+    res.send(JSON.stringify(response));
+});
+
