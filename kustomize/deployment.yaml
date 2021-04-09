@@ -23,7 +23,8 @@ spec:
         app: headertest
     spec:
       containers:
-      - image: fra.ocir.io/sefinland/mrinne/headertest:1.0
+      - image: 
+        repository: mikarinneoracle/headertesting
         imagePullPolicy: IfNotPresent
         name: headertest
         ports:
