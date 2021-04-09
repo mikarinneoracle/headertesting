@@ -6,7 +6,6 @@ metadata:
     app: headertest
   name: headertest
 spec:
-  spec:
   replicas: 3
   minReadySeconds: 3
   revisionHistoryLimit: 5
