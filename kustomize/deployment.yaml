@@ -24,7 +24,7 @@ spec:
         app: headertest
     spec:
       containers:
-      - image: fra.ocir.io/sefinland/mrinne/headertest:1.0
+      - image: ghcr.io/mikarinneoracle/headertesting:latest
         imagePullPolicy: Always
         name: headertest
         ports:
