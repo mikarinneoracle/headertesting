@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - image: fra.ocir.io/sefinland/mrinne/headertest:2.0
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: headertest
         ports:
         - containerPort: 3000
